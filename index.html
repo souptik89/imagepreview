@@ -2,98 +2,101 @@
 <html lang="en">
 
 <head>
-    <title>Image preview example</title>
+    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" media="screen" href="css/style.css">
+    <style>
+        .content {
+            /*  position: absolute;
+            top: 20px;
+            left: 0px; */
+            width: 100%;
+        }
 
+        .thumb-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .img-wrap {
+            width: 300px;
+            max-height: 137px;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .img-wrap img,
+        .preview img {
+            max-width: 100%;
+        }
+
+        .preview {
+            width: 540px;
+            margin: 10px auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .preview #close {
+            display: inline-block;
+            z-index: 10;
+            cursor: pointer;
+            position: absolute;
+            right: -18px;
+            top: -12px;
+            background-color: #f38484;
+            color: #000;
+            border-radius: 30px;
+            padding: 3px 6px;
+
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container-fluid" id="particles-js">
-
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="thumb-wrap" id="thumb-wrap">
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/fall-autumn-red-season.jpg" />
-                    </div>
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/grandpa-old-shepherd-buffalo.jpeg" />
-                    </div>
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/nature-tree-green-pine.jpg" />
-                    </div>
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/pexels-photo.jpg" />
-                    </div>
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/pexels-photo-257840.jpeg" />
-                    </div>
-                    <div class="img-wrap">
-                        <img class="img-responsive" src="imgs/pexels-photo-592077.jpeg" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="preview" id="preview">
-                <img class="img-responsive" src="" />
-                <span id="close">close</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div id="f1_container">
-                <div id="f1_card" class="shadow">
-                    <div class="front face">
-                        <img src="imgs/pexels-photo-592077.jpeg" />
-                    </div>
-                    <div class="back face center">
-                        <p>This is nice for exposing more information about an image.</p>
-                        <p>Any content can go here.</p>
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="thumb-wrap" id="thumb-wrap">
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/fall-autumn-red-season.jpg" />
+                        </div>
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/grandpa-old-shepherd-buffalo.jpeg" />
+                        </div>
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/nature-tree-green-pine.jpg" />
+                        </div>
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/pexels-photo.jpg" />
+                        </div>
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/pexels-photo-257840.jpeg" />
+                        </div>
+                        <div class="img-wrap">
+                            <img class="img-responsive" src="imgs/pexels-photo-592077.jpeg" />
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="pop">
+                <div class="preview" id="preview">
+                    <img class="img-responsive" src="" />
+                    <span id="close">close</span>
+                </div>
+            </div>
         </div>
-
-    </div>
-
-
-    <div class="side-drawer">
-        <ul class="main-wrap">
-            <li>
-                <div class="icon-wrap">
-                    <i class="fa fa-download"></i>
-                </div>
-                <p class="title">What is Lorem Ipsum?</p>
-                <p class="context">It is a long established fact that a reader will be distracted by the readable content of a page when looking
-                    at its layout. </p>
-            </li>
-            <li>
-                <div class="icon-wrap">
-                    <i class="fa fa-download"></i>
-                </div>
-                <p class="title">What is Lorem Ipsum?</p>
-                <p class="context">It is a long established fact that a reader will be distracted by the readable content of a page when looking
-                    at its layout. </p>
-            </li>
-            <li>
-                <div class="icon-wrap">
-                    <i class="fa fa-download"></i>
-                </div>
-                <p class="title">What is Lorem Ipsum?</p>
-                <p class="context">It is a long established fact that a reader will be distracted by the readable content of a page when looking
-                    at its layout. </p>
-            </li>
-        </ul>
     </div>
     <!-- script -->
     <script src="particles.js"></script>
@@ -101,17 +104,25 @@
     <!-- script -->
 
     <!-- stats.js -->
+    <script src="js/lib/stats.js"></script>
     <script>
-        var count_particles, update;
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
         count_particles = document.querySelector('.js-count-particles');
-        /*   update = function () {
-
-              if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-                  count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-              }
-              requestAnimationFrame(update);
-          };
-        requestAnimationFrame(update); */
+        update = function () {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
     </script>
 </body>
 
