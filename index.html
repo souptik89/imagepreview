@@ -42,9 +42,10 @@
             margin: 10px auto;
             position: relative;
             z-index: 5;
+            display: none;
         }
 
-        .preview #close {
+        .preview #closeBtn {
             display: inline-block;
             z-index: 10;
             cursor: pointer;
@@ -55,7 +56,6 @@
             color: #000;
             border-radius: 30px;
             padding: 3px 6px;
-
         }
     </style>
 </head>
@@ -93,14 +93,14 @@
             <div class="pop">
                 <div class="preview" id="preview">
                     <img class="img-responsive" src="" />
-                    <span id="close">close</span>
+                    <span id="closeBtn">close</span>
                 </div>
             </div>
         </div>
     </div>
     <!-- script -->
     <script src="particles.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <!-- script -->
 
     <!-- stats.js -->
