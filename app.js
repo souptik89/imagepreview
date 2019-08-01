@@ -1,40 +1,31 @@
 $(document).ready(function () {
-    var prevUrl = $("#preview img").attr("src");
-    console.log(prevUrl);
-    if (prevUrl === "" || prevUrl === "undefined" || prevUrl === "unknown") {
-        $("#preview img").hide();
-    }
-    //displayPreview();
-
+    $("#preview").hide();
     function displayPreview(url) {
-
-        if (url === "" || url === "undefined" || url == "unknown") {
-            $("#preview img").hide();
-
-            alert('image not found' + url);
+        if (url == "" || url == "undefined" || url == null) {
+            $("#preview").hide();
+            // alert('image not found' + url);
         } else {
-            $("#preview img, #close").fadeOut("fast", function () {
+            $("#preview").fadeOut("fast", function () {
                 $("#preview img").attr("src", url);
-                $("#preview img").fadeIn("slow");
-
+                $("#preview").fadeIn("slow");
             });
-            $("#preview  #close").fadeIn("slow");
-
+            //  $("#preview  #close").fadeIn("slow");
         }
-
     };
 
-
+    //  displayPreview();
 
     $("#thumb-wrap img").on("click", function (event) {
+        event.preventDefault();
         var imgUrl = $(this).attr("src");
         displayPreview(imgUrl);
         console.log(imgUrl);
-
     });
-    $("#preview #close").click(function () {
-        $("#close").fadeOut("fast");
-        $("#preview img").fadeOut("fast");
+    $("#close").on("click", function () {
+        // $("#close").fadeOut("fast");
+        $("#preview").fadeOut("fast", function () {
+            // Animation complete.
+        });
     });
 })
 
