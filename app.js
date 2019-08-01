@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#preview").hide();
     function displayPreview(url) {
         if (url == "" || url == "undefined" || url == null) {
             $("#preview").hide();
@@ -21,7 +20,7 @@ $(document).ready(function () {
         displayPreview(imgUrl);
         console.log(imgUrl);
     });
-    $("#close").on("click", function () {
+    $("#closeBtn").on("click", function () {
         // $("#close").fadeOut("fast");
         $("#preview").fadeOut("fast", function () {
             // Animation complete.
